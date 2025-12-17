@@ -1,0 +1,116 @@
+---
+interface Props {
+  name: string;
+  displayName: string;
+  radius: string;
+  link: string;
+}
+
+const { name, displayName, radius, link } = Astro.props;
+---
+
+<a href={link} class="location-card">
+  <div class="location-header">
+    <h3 class="location-name">{displayName}</h3>
+    <svg class="location-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </div>
+  <p class="location-radius">Service Radius: {radius}</p>
+  <span class="location-link">View Details →</span>
+</a>
+
+<style>
+  .location-card {
+    display: block;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .location-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-red), var(--primary-blue));
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+  }
+
+  .location-card:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.3);
+  }
+
+  .location-card:hover::before {
+    transform: scaleY(1);
+  }
+
+  .location-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .location-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .location-arrow {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-blue);
+    transition: transform 0.3s ease;
+  }
+
+  .location-card:hover .location-arrow {
+    transform: translateX(4px);
+    color: var(--primary-red);
+  }
+
+  .location-radius {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .location-link {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+  }
+
+  .location-card:hover .location-link {
+    color: var(--primary-red);
+  }
+
+  @media (max-width: 640px) {
+    .location-card {
+      padding: 1.5rem;
+    }
+
+    .location-name {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+

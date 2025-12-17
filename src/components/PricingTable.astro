@@ -1,0 +1,140 @@
+---
+---
+
+<div class="pricing-section">
+  <div class="pricing-container">
+    <h2 class="pricing-title">Transparent Pricing</h2>
+    <p class="pricing-subtitle">We charge by the hour with clear minimums - no hidden fees, no surprises.</p>
+    
+    <div class="pricing-table">
+      <div class="pricing-row">
+        <div class="pricing-label">Weekdays (6AM–6PM)</div>
+        <div class="pricing-value">$125/hr</div>
+        <div class="pricing-minimum">2-hour minimum</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-label">After-Hours (6PM–6AM)</div>
+        <div class="pricing-value">$175/hr</div>
+        <div class="pricing-minimum">2-hour minimum</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-label">Weekends</div>
+        <div class="pricing-value">$175/hr</div>
+        <div class="pricing-minimum">3-hour minimum</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-label">Holidays</div>
+        <div class="pricing-value">$200/hr</div>
+        <div class="pricing-minimum">4-hour minimum</div>
+      </div>
+    </div>
+
+    <div class="pricing-disclaimers">
+      <p>• Prices do not include parts, taxes, or additional fees unless specified</p>
+      <p>• Travel/drive time may apply for locations outside standard service radius</p>
+      <p>• Service availability varies by location - Spokane services currently limited</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pricing-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-card);
+  }
+
+  .pricing-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .pricing-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .pricing-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+  }
+
+  .pricing-table {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .pricing-row:hover {
+    border-color: var(--primary-red);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(210, 10, 15, 0.2);
+  }
+
+  .pricing-label {
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 1rem;
+  }
+
+  .pricing-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    white-space: nowrap;
+  }
+
+  .pricing-minimum {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .pricing-disclaimers {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .pricing-disclaimers p {
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .pricing-row {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      text-align: center;
+    }
+
+    .pricing-value {
+      font-size: 1.25rem;
+    }
+
+    .pricing-section {
+      padding: 3rem 1rem;
+    }
+  }
+</style>
+

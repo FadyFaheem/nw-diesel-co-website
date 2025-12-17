@@ -1,0 +1,18 @@
+{
+  "dfw": {
+    "name": "DFW",
+    "displayName": "Dallas-Fort Worth",
+    "phone": "(682) 540-4507",
+    "radius": "100-mile radius",
+    "servicesAvailable": "all",
+    "limitations": null
+  },
+  "spokane": {
+    "name": "Spokane",
+    "displayName": "Spokane",
+    "phone": "(682) 540-4507",
+    "radius": "75-mile radius",
+    "servicesAvailable": "limited",
+    "limitations": "Services currently limited - call before requesting service"
+  }
+}

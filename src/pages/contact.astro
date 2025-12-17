@@ -1,0 +1,832 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import locationsData from '../data/locations.json';
+
+const phoneNumber = locationsData.dfw.phone;
+const email = 'donovanw@nwdieselco.com';
+---
+
+<BaseLayout 
+  title="Contact Us | Request Service | NorthWestern Diesel"
+  description="Request mobile diesel repair service or get in touch with NorthWestern Diesel. Call (682) 540-4507 or fill out our service request form."
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="hero-container">
+      <h1 class="page-title">Request Service</h1>
+      <p class="page-subtitle">Get in touch with us to schedule mobile diesel repair service or ask questions</p>
+    </div>
+  </section>
+
+  <!-- Contact Methods -->
+  <section class="contact-methods-section">
+    <div class="contact-methods-container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-methods-grid">
+        <div class="contact-method-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="method-icon">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <h3>Phone</h3>
+          <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="contact-link">{phoneNumber}</a>
+          <p class="contact-note">Available 24/7 for emergencies</p>
+        </div>
+        <div class="contact-method-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="method-icon">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <h3>Email</h3>
+          <a href={`mailto:${email}`} class="contact-link">{email}</a>
+          <p class="contact-note">We'll respond within 24 hours</p>
+        </div>
+      </div>
+      <p class="hours-note">
+        <strong>Regular Service Hours:</strong> Monday-Friday, 6AM-6PM<br>
+        <strong>Emergency Service:</strong> Available 24/7
+      </p>
+    </div>
+  </section>
+
+  <!-- Request Service Form -->
+  <section class="form-section">
+    <div class="form-container">
+      <h2 class="section-title">Request Service Form</h2>
+      <p class="form-subtitle">Fill out the form below and we'll get back to you as soon as possible. For emergencies, please call us directly.</p>
+      
+      <form id="request-service-form" class="service-form">
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name" class="form-label">
+            Name <span class="required">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            class="form-input" 
+            required 
+            aria-required="true"
+            placeholder="Your full name"
+          />
+          <span class="error-message" id="name-error"></span>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone" class="form-label">
+            Phone <span class="required">*</span>
+          </label>
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            class="form-input" 
+            required 
+            aria-required="true"
+            placeholder="(682) 555-1234"
+            pattern="[0-9\s\(\)\-]+"
+          />
+          <span class="error-message" id="phone-error"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" class="form-label">
+            Email <span class="required">*</span>
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-input" 
+            required 
+            aria-required="true"
+            placeholder="your.email@example.com"
+          />
+          <span class="error-message" id="email-error"></span>
+        </div>
+
+        <!-- Location -->
+        <div class="form-group">
+          <label for="location" class="form-label">
+            Service Location <span class="required">*</span>
+          </label>
+          <select 
+            id="location" 
+            name="location" 
+            class="form-select" 
+            required 
+            aria-required="true"
+          >
+            <option value="">Select a location</option>
+            <option value="dfw">{locationsData.dfw.displayName}</option>
+            <option value="spokane">{locationsData.spokane.displayName}</option>
+          </select>
+          <span class="error-message" id="location-error"></span>
+        </div>
+
+        <!-- City/ZIP -->
+        <div class="form-group">
+          <label for="city-zip" class="form-label">
+            City / ZIP Code <span class="required">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="city-zip" 
+            name="city-zip" 
+            class="form-input" 
+            required 
+            aria-required="true"
+            placeholder="Dallas, TX 75201"
+          />
+          <span class="error-message" id="city-zip-error"></span>
+        </div>
+
+        <!-- Equipment Type -->
+        <div class="form-group">
+          <label for="equipment-type" class="form-label">
+            Equipment Type <span class="required">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="equipment-type" 
+            name="equipment-type" 
+            class="form-input" 
+            required 
+            aria-required="true"
+            placeholder="e.g., Semi-truck, Construction equipment, Farm tractor"
+          />
+          <span class="error-message" id="equipment-type-error"></span>
+        </div>
+
+        <!-- Urgency -->
+        <div class="form-group">
+          <label for="urgency" class="form-label">
+            Urgency <span class="required">*</span>
+          </label>
+          <select 
+            id="urgency" 
+            name="urgency" 
+            class="form-select" 
+            required 
+            aria-required="true"
+          >
+            <option value="">Select urgency level</option>
+            <option value="emergency">Emergency - Need immediate assistance</option>
+            <option value="same-day">Same Day - Can wait a few hours</option>
+            <option value="scheduled">Scheduled - Planning ahead</option>
+          </select>
+          <span class="error-message" id="urgency-error"></span>
+        </div>
+
+        <!-- Issue Description -->
+        <div class="form-group">
+          <label for="description" class="form-label">
+            Issue Description <span class="required">*</span>
+          </label>
+          <textarea 
+            id="description" 
+            name="description" 
+            class="form-textarea" 
+            required 
+            aria-required="true"
+            rows="5"
+            placeholder="Please describe the issue you're experiencing..."
+          ></textarea>
+          <span class="error-message" id="description-error"></span>
+        </div>
+
+        <!-- Preferred Contact -->
+        <div class="form-group">
+          <label class="form-label">
+            Preferred Contact Method <span class="required">*</span>
+          </label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input 
+                type="radio" 
+                name="preferred-contact" 
+                value="call" 
+                required 
+                aria-required="true"
+                class="radio-input"
+              />
+              <span>Phone Call</span>
+            </label>
+            <label class="radio-label">
+              <input 
+                type="radio" 
+                name="preferred-contact" 
+                value="email" 
+                required 
+                aria-required="true"
+                class="radio-input"
+              />
+              <span>Email</span>
+            </label>
+          </div>
+          <span class="error-message" id="preferred-contact-error"></span>
+        </div>
+
+        <!-- Consent Checkbox -->
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input 
+              type="checkbox" 
+              id="consent" 
+              name="consent" 
+              required 
+              aria-required="true"
+              class="checkbox-input"
+            />
+            <span>
+              I consent to NorthWestern Diesel contacting me regarding my service request. 
+              I have read and agree to the <a href="/privacy/" target="_blank" class="privacy-link">Privacy Policy</a>. 
+              <span class="required">*</span>
+            </span>
+          </label>
+          <span class="error-message" id="consent-error"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit" class="btn-submit" id="submit-btn">
+            <span class="submit-text">Submit Request</span>
+            <span class="submit-loading" id="submit-loading" style="display: none;">
+              <svg class="spinner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="2" x2="12" y2="6"></line>
+                <line x1="12" y1="18" x2="12" y2="22"></line>
+                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                <line x1="2" y1="12" x2="6" y2="12"></line>
+                <line x1="18" y1="12" x2="22" y2="12"></line>
+                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+              </svg>
+              Submitting...
+            </span>
+          </button>
+        </div>
+
+        <!-- Success/Error Messages -->
+        <div id="form-message" class="form-message" role="alert"></div>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(8, 112, 216, 0.1) 0%,
+      transparent 50%
+    );
+    background-color: var(--bg-dark);
+    text-align: center;
+  }
+
+  .hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .page-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Contact Methods */
+  .contact-methods-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-card);
+  }
+
+  .contact-methods-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .contact-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0 2rem;
+  }
+
+  .contact-method-card {
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .contact-method-card:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.3);
+  }
+
+  .method-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+  }
+
+  .contact-method-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .contact-link {
+    display: block;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .contact-link:hover {
+    color: var(--primary-red);
+  }
+
+  .contact-note {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .hours-note {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 2rem 0 0;
+    line-height: 1.8;
+  }
+
+  .hours-note strong {
+    color: var(--text-light);
+  }
+
+  /* Form Section */
+  .form-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+    display: none;
+  }
+
+  .form-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .form-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin: 0 0 3rem 0;
+    line-height: 1.6;
+  }
+
+  .service-form {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    border-radius: 12px;
+    padding: 2.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    display: block;
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .required {
+    color: var(--primary-red);
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background-color: var(--bg-dark);
+    border: 2px solid rgba(210, 10, 15, 0.3);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+  }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px rgba(210, 10, 15, 0.2);
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: var(--text-muted);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .radio-input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-red);
+    cursor: pointer;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: var(--text-light);
+    cursor: pointer;
+    line-height: 1.6;
+  }
+
+  .checkbox-input {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    accent-color: var(--primary-red);
+    cursor: pointer;
+  }
+
+  .privacy-link {
+    color: var(--primary-blue);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+
+  .privacy-link:hover {
+    color: var(--primary-red);
+  }
+
+  .error-message {
+    display: block;
+    color: var(--primary-red);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    min-height: 1.25rem;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(210, 10, 15, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(210, 10, 15, 0.5);
+    background: linear-gradient(135deg, var(--primary-red-dark), var(--primary-red));
+  }
+
+  .btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .form-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    min-height: 1.5rem;
+  }
+
+  .form-message.success {
+    background-color: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    color: #22c55e;
+  }
+
+  .form-message.error {
+    background-color: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #ef4444;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .page-hero,
+    .contact-methods-section,
+    .form-section {
+      padding: 3rem 1rem;
+    }
+
+    .service-form {
+      padding: 1.5rem;
+    }
+
+    .contact-methods-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .radio-group {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('request-service-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const submitText = submitBtn?.querySelector('.submit-text') as HTMLElement | null;
+  const submitLoading = document.getElementById('submit-loading') as HTMLElement | null;
+  const formMessage = document.getElementById('form-message') as HTMLElement | null;
+
+  if (!form || !submitBtn || !submitText || !submitLoading || !formMessage) {
+    console.error('Required form elements not found');
+  } else {
+    // Clear error messages on input
+    const inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('input', () => {
+        const errorId = (input as HTMLElement).id + '-error';
+        const errorEl = document.getElementById(errorId);
+        if (errorEl) {
+          errorEl.textContent = '';
+        }
+        input.classList.remove('error');
+      });
+    });
+
+    // Form validation
+    function validateForm(): boolean {
+      let isValid = true;
+      const errors: Record<string, string> = {};
+
+      // Name validation
+      const nameEl = document.getElementById('name') as HTMLInputElement | null;
+      const name = nameEl?.value.trim() || '';
+      if (!name) {
+        errors.name = 'Name is required';
+        isValid = false;
+      }
+
+      // Phone validation
+      const phoneEl = document.getElementById('phone') as HTMLInputElement | null;
+      const phone = phoneEl?.value.trim() || '';
+      if (!phone) {
+        errors.phone = 'Phone number is required';
+        isValid = false;
+      } else if (!/^[\d\s\(\)\-]+$/.test(phone)) {
+        errors.phone = 'Please enter a valid phone number';
+        isValid = false;
+      }
+
+      // Email validation
+      const emailEl = document.getElementById('email') as HTMLInputElement | null;
+      const email = emailEl?.value.trim() || '';
+      if (!email) {
+        errors.email = 'Email is required';
+        isValid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errors.email = 'Please enter a valid email address';
+        isValid = false;
+      }
+
+      // Location validation
+      const locationEl = document.getElementById('location') as HTMLSelectElement | null;
+      const location = locationEl?.value || '';
+      if (!location) {
+        errors.location = 'Service location is required';
+        isValid = false;
+      }
+
+      // City/ZIP validation
+      const cityZipEl = document.getElementById('city-zip') as HTMLInputElement | null;
+      const cityZip = cityZipEl?.value.trim() || '';
+      if (!cityZip) {
+        errors['city-zip'] = 'City/ZIP is required';
+        isValid = false;
+      }
+
+      // Equipment type validation
+      const equipmentTypeEl = document.getElementById('equipment-type') as HTMLInputElement | null;
+      const equipmentType = equipmentTypeEl?.value.trim() || '';
+      if (!equipmentType) {
+        errors['equipment-type'] = 'Equipment type is required';
+        isValid = false;
+      }
+
+      // Urgency validation
+      const urgencyEl = document.getElementById('urgency') as HTMLSelectElement | null;
+      const urgency = urgencyEl?.value || '';
+      if (!urgency) {
+        errors.urgency = 'Urgency level is required';
+        isValid = false;
+      }
+
+      // Description validation
+      const descriptionEl = document.getElementById('description') as HTMLTextAreaElement | null;
+      const description = descriptionEl?.value.trim() || '';
+      if (!description) {
+        errors.description = 'Issue description is required';
+        isValid = false;
+      }
+
+      // Preferred contact validation
+      const preferredContact = form!.querySelector('input[name="preferred-contact"]:checked') as HTMLInputElement | null;
+      if (!preferredContact) {
+        errors['preferred-contact'] = 'Preferred contact method is required';
+        isValid = false;
+      }
+
+      // Consent validation
+      const consentEl = document.getElementById('consent') as HTMLInputElement | null;
+      const consent = consentEl?.checked || false;
+      if (!consent) {
+        errors.consent = 'You must consent to the privacy policy';
+        isValid = false;
+      }
+
+      // Display errors
+      Object.keys(errors).forEach(key => {
+        const errorId = key + '-error';
+        const errorEl = document.getElementById(errorId);
+        const inputEl = document.getElementById(key) || form!.querySelector(`[name="${key}"]`) as HTMLElement | null;
+        
+        if (errorEl) {
+          errorEl.textContent = errors[key];
+        }
+        if (inputEl) {
+          inputEl.classList.add('error');
+        }
+      });
+
+      return isValid;
+    }
+
+    // Form submission
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Clear previous messages
+      formMessage.textContent = '';
+      formMessage.className = 'form-message';
+
+      // Validate form
+      if (!validateForm()) {
+        formMessage.textContent = 'Please correct the errors above and try again.';
+        formMessage.className = 'form-message error';
+        return;
+      }
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitText.style.display = 'none';
+      submitLoading.style.display = 'flex';
+
+      // Get form data
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        // In a real implementation, this would send to a backend endpoint
+        // For now, we'll simulate a successful submission
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        // Show success message
+        formMessage.textContent = 'Thank you! Your service request has been submitted. We\'ll contact you soon.';
+        formMessage.className = 'form-message success';
+        
+        // Reset form
+        form.reset();
+        
+        // Scroll to message
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (error) {
+        // Show error message
+        const phoneValue = formData.get('phone') || '';
+        formMessage.textContent = 'There was an error submitting your request. Please call us directly at ' + phoneValue + ' or try again later.';
+        formMessage.className = 'form-message error';
+      } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitText.style.display = 'inline';
+        submitLoading.style.display = 'none';
+      }
+    });
+
+    // Add error styling
+    const style = document.createElement('style');
+    style.textContent = `
+      .form-input.error,
+      .form-select.error,
+      .form-textarea.error {
+        border-color: var(--primary-red);
+        box-shadow: 0 0 0 3px rgba(210, 10, 15, 0.2);
+      }
+    `;
+    document.head.appendChild(style);
+  }
+</script>
+

@@ -1,0 +1,105 @@
+---
+import locationsData from '../data/locations.json';
+
+const phoneNumber = locationsData.dfw.phone;
+---
+
+<div class="emergency-banner">
+  <div class="emergency-content">
+    <svg class="emergency-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+      <line x1="12" y1="9" x2="12" y2="14"></line>
+      <circle cx="12" cy="17" r="0.5"></circle>
+    </svg>
+    <div class="emergency-text">
+      <strong>Need Help Now?</strong> Call us directly for the fastest response:
+      <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="emergency-phone">{phoneNumber}</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .emergency-banner {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    padding: 1rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .emergency-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .emergency-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .emergency-text {
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .emergency-text strong {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .emergency-phone {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .emergency-phone:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 640px) {
+    .emergency-banner {
+      padding: 0.75rem 1rem;
+    }
+
+    .emergency-text {
+      font-size: 0.9rem;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .emergency-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+</style>
+

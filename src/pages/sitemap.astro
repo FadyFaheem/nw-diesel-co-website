@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const siteUrl = 'https://nwdieselco.com';
+
+const pages = [
+  { url: '', title: 'Home' },
+  { url: 'service-areas/', title: 'Service Areas' },
+  { url: 'service-areas/dfw/', title: 'Dallas-Fort Worth' },
+  { url: 'service-areas/spokane/', title: 'Spokane' },
+  { url: 'services/', title: 'Services' },
+  { url: 'emergency/', title: 'Emergency Repairs' },
+  { url: 'about/', title: 'About Us' },
+  { url: 'contact/', title: 'Contact' },
+  { url: 'privacy/', title: 'Privacy Policy' },
+  { url: 'terms/', title: 'Terms & Disclaimers' },
+  { url: 'testimonials/', title: 'Testimonials' },
+  { url: 'gallery/', title: 'Gallery / Before & After' },
+  { url: 'careers/', title: 'Careers / Hiring' },
+  { url: 'scheduling/', title: 'Online Scheduling' },
+  { url: 'additional-locations/', title: 'Additional Locations' },
+];
+---
+
+<BaseLayout 
+  title="Sitemap | NorthWestern Diesel"
+  description="Complete sitemap of all pages on NorthWestern Diesel website."
+>
+  <section class="sitemap-section">
+    <div class="sitemap-container">
+      <h1 class="sitemap-title">Sitemap</h1>
+      <p class="sitemap-description">All pages on NorthWestern Diesel website</p>
+      
+      <div class="sitemap-list">
+        {pages.map((page) => (
+          <a href={`/${page.url}`} class="sitemap-link">
+            <span class="sitemap-url">/{page.url || ''}</span>
+            <span class="sitemap-page-title">{page.title}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .sitemap-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+    min-height: 60vh;
+  }
+
+  .sitemap-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .sitemap-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .sitemap-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0 0 3rem 0;
+    line-height: 1.6;
+  }
+
+  .sitemap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .sitemap-link {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .sitemap-link:hover {
+    transform: translateX(8px);
+    border-color: var(--primary-blue);
+    box-shadow: 0 4px 12px rgba(8, 112, 216, 0.2);
+  }
+
+  .sitemap-url {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+
+  .sitemap-page-title {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  .sitemap-link:hover .sitemap-page-title {
+    color: var(--primary-blue);
+  }
+
+  @media (max-width: 640px) {
+    .sitemap-section {
+      padding: 3rem 1rem;
+    }
+
+    .sitemap-link {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .sitemap-url {
+      min-width: auto;
+      font-size: 0.85rem;
+    }
+  }
+</style>
+

@@ -1,0 +1,581 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmergencyBanner from '../components/EmergencyBanner.astro';
+import locationsData from '../data/locations.json';
+
+const phoneNumber = locationsData.dfw.phone;
+---
+
+<BaseLayout 
+  title="Emergency Diesel Repair | 24/7 Service | NorthWestern Diesel"
+  description="24/7 emergency mobile diesel repair service. Fast response times for breakdowns and urgent repairs. Call (682) 540-4507 now for immediate assistance."
+>
+  <!-- Emergency Banner -->
+  <EmergencyBanner />
+
+  <!-- Emergency Hero -->
+  <section class="emergency-hero">
+    <div class="hero-container">
+      <div class="emergency-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="badge-icon">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        Emergency Service Available 24/7
+      </div>
+      <h1 class="emergency-title">Need Emergency Diesel Repair?</h1>
+      <p class="emergency-subtitle">Call us directly for the fastest response. We're available 24/7 for emergency roadside assistance and urgent repairs.</p>
+      <div class="emergency-cta-large">
+        <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-emergency">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="phone-icon">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          Call Now: {phoneNumber}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call First Guidance -->
+  <section class="call-first-section">
+    <div class="call-first-container">
+      <div class="call-first-content">
+        <h2 class="call-first-title">Call First for Fastest Response</h2>
+        <p class="call-first-text">
+          For emergency situations, calling us directly ensures the fastest possible response time. 
+          Our team can assess your situation immediately and dispatch a technician right away.
+        </p>
+        <div class="call-first-features">
+          <div class="feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-icon">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div>
+              <h3>Immediate Assessment</h3>
+              <p>We'll assess your situation over the phone and provide guidance</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-icon">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <div>
+              <h3>Fast Dispatch</h3>
+              <p>We'll dispatch a technician immediately to your location</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-icon">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div>
+              <h3>On-Site Service</h3>
+              <p>We bring the shop to you - no need to tow your equipment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Situations -->
+  <section class="emergency-situations">
+    <div class="situations-container">
+      <h2 class="section-title">Common Emergency Situations</h2>
+      <p class="section-subtitle">We handle all types of diesel equipment emergencies</p>
+      <div class="situations-grid">
+        <div class="situation-card">
+          <h3>Roadside Breakdowns</h3>
+          <p>Stranded on the highway? We'll come to you and get you back on the road.</p>
+        </div>
+        <div class="situation-card">
+          <h3>Engine Failures</h3>
+          <p>Sudden engine problems? Our technicians can diagnose and repair on-site.</p>
+        </div>
+        <div class="situation-card">
+          <h3>Fuel System Issues</h3>
+          <p>Fuel delivery problems, injector failures, or fuel contamination - we've got you covered.</p>
+        </div>
+        <div class="situation-card">
+          <h3>Electrical Problems</h3>
+          <p>Battery issues, alternator failures, or wiring problems - fast diagnosis and repair.</p>
+        </div>
+        <div class="situation-card">
+          <h3>Cooling System Failures</h3>
+          <p>Overheating, coolant leaks, or radiator issues - emergency service available.</p>
+        </div>
+        <div class="situation-card">
+          <h3>Air System Problems</h3>
+          <p>Air brake failures, compressor issues, or air system leaks - critical for safety.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Expect -->
+  <section class="expect-section">
+    <div class="expect-container">
+      <h2 class="section-title">What to Expect</h2>
+      <div class="expect-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Call Us</h3>
+            <p>Call {phoneNumber} and describe your emergency situation</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Assessment</h3>
+            <p>We'll assess your situation and provide immediate guidance</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Dispatch</h3>
+            <p>We'll dispatch a technician to your location immediately</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Repair</h3>
+            <p>Our technician arrives with tools and parts to fix your equipment on-site</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency CTA -->
+  <section class="emergency-cta-section">
+    <div class="emergency-cta-container">
+      <h2 class="emergency-cta-title">Don't Wait - Call Now</h2>
+      <p class="emergency-cta-text">For emergency diesel repair, calling is always faster than filling out a form. Our team is standing by 24/7.</p>
+      <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-emergency-large">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="phone-icon-large">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        Call {phoneNumber}
+      </a>
+      <p class="emergency-cta-note">Available 24 hours a day, 7 days a week</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Emergency Hero */
+  .emergency-hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.2) 0%,
+      rgba(210, 10, 15, 0.05) 50%,
+      transparent 100%
+    );
+    background-color: var(--bg-dark);
+    text-align: center;
+  }
+
+  .hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .emergency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-red);
+    border-radius: 50px;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    animation: pulse-badge 2s infinite;
+  }
+
+  @keyframes pulse-badge {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(210, 10, 15, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(210, 10, 15, 0);
+    }
+  }
+
+  .badge-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .emergency-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .emergency-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-muted);
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .emergency-cta-large {
+    margin-top: 2rem;
+  }
+
+  .btn-emergency {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.5);
+    animation: pulse-button 2s infinite;
+  }
+
+  @keyframes pulse-button {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+
+  .btn-emergency:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(210, 10, 15, 0.6);
+    background: linear-gradient(135deg, var(--primary-red-dark), var(--primary-red));
+  }
+
+  .phone-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Call First Section */
+  .call-first-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-card);
+  }
+
+  .call-first-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .call-first-content {
+    text-align: center;
+  }
+
+  .call-first-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .call-first-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 3rem 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .call-first-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    text-align: left;
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-item:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.3);
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    color: var(--primary-red);
+  }
+
+  .feature-item h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .feature-item p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Emergency Situations */
+  .emergency-situations {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+  }
+
+  .situations-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin: 0 0 3rem 0;
+    line-height: 1.6;
+  }
+
+  .situations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .situation-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .situation-card:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.3);
+  }
+
+  .situation-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .situation-card p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* What to Expect */
+  .expect-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-card);
+  }
+
+  .expect-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .expect-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .step-content p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Emergency CTA Section */
+  .emergency-cta-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.2) 0%,
+      rgba(8, 112, 216, 0.1) 100%
+    );
+    background-color: var(--bg-dark);
+  }
+
+  .emergency-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .emergency-cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .emergency-cta-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+  }
+
+  .btn-emergency-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .btn-emergency-large:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(210, 10, 15, 0.6);
+    background: linear-gradient(135deg, var(--primary-red-dark), var(--primary-red));
+  }
+
+  .phone-icon-large {
+    width: 32px;
+    height: 32px;
+  }
+
+  .emergency-cta-note {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+    font-style: italic;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .emergency-hero,
+    .call-first-section,
+    .emergency-situations,
+    .expect-section,
+    .emergency-cta-section {
+      padding: 3rem 1rem;
+    }
+
+    .btn-emergency,
+    .btn-emergency-large {
+      font-size: 1.25rem;
+      padding: 1.25rem 2rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .call-first-features,
+    .situations-grid,
+    .expect-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-item {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+

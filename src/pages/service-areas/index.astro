@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LocationCard from '../../components/LocationCard.astro';
+import locationsData from '../../data/locations.json';
+---
+
+<BaseLayout 
+  title="Service Areas | NorthWestern Diesel | DFW & Spokane"
+  description="Mobile diesel repair service areas covering Dallas-Fort Worth and Spokane regions. Licensed & insured on-site service."
+>
+  <section class="page-hero">
+    <div class="hero-container">
+      <h1 class="page-title">Service Areas</h1>
+      <p class="page-subtitle">We bring professional mobile diesel repair services directly to your location across our service regions</p>
+    </div>
+  </section>
+
+  <section class="locations-section">
+    <div class="locations-container">
+      <div class="locations-grid">
+        <LocationCard
+          name="dfw"
+          displayName={locationsData.dfw.displayName}
+          radius={locationsData.dfw.radius}
+          link="/service-areas/dfw/"
+        />
+        <LocationCard
+          name="spokane"
+          displayName={locationsData.spokane.displayName}
+          radius={locationsData.spokane.radius}
+          link="/service-areas/spokane/"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="info-container">
+      <h2 class="info-title">Coverage Areas</h2>
+      <p class="info-description">
+        NorthWestern Diesel provides mobile diesel repair services across multiple regions. 
+        Our service radius ensures we can reach you quickly, whether you're in the heart of 
+        the metroplex or in more remote areas.
+      </p>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>DFW Metroplex</h3>
+          <p>100-mile radius from Dallas-Fort Worth</p>
+          <p class="info-note">Full service availability</p>
+        </div>
+        <div class="info-card">
+          <h3>Spokane Region</h3>
+          <p>75-mile radius from Spokane</p>
+          <p class="info-note">Limited services - call to confirm availability</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      transparent 50%
+    );
+    background-color: var(--bg-dark);
+    text-align: center;
+  }
+
+  .hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .page-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .locations-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+  }
+
+  .locations-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .info-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-card);
+  }
+
+  .info-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .info-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .info-description {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 3rem 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .info-card {
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .info-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .info-card p {
+    color: var(--text-muted);
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .info-note {
+    color: var(--primary-blue) !important;
+    font-weight: 600;
+    margin-top: 1rem !important;
+  }
+
+  @media (max-width: 640px) {
+    .page-hero,
+    .locations-section,
+    .info-section {
+      padding: 3rem 1rem;
+    }
+
+    .locations-grid,
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

@@ -1,0 +1,336 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import locationsData from '../data/locations.json';
+
+const phoneNumber = locationsData.dfw.phone;
+---
+
+<BaseLayout 
+  title="Testimonials | NorthWestern Diesel | Customer Reviews"
+  description="Read testimonials and reviews from satisfied customers of NorthWestern Diesel. See why businesses trust us for mobile diesel repair services in DFW and Spokane."
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="hero-container">
+      <h1 class="page-title">Customer Testimonials</h1>
+      <p class="page-subtitle">Hear from businesses that trust NorthWestern Diesel</p>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="testimonials-container">
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="quote-icon">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25-.25 4-2.75 4v1c0 1 0 1 1 1z"></path>
+            </svg>
+            <p class="testimonial-text">
+              "NorthWestern Diesel saved us from a major breakdown on the highway. Their mobile service arrived quickly and had us back on the road in no time. Professional, efficient, and reasonably priced."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4 class="author-name">John Smith</h4>
+                <p class="author-title">Fleet Manager, ABC Transport</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="quote-icon">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25-.25 4-2.75 4v1c0 1 0 1 1 1z"></path>
+            </svg>
+            <p class="testimonial-text">
+              "We've been using NorthWestern Diesel for our fleet maintenance for months now. Their technicians are knowledgeable, the pricing is transparent, and they always show up on time. Highly recommend!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4 class="author-name">Sarah Johnson</h4>
+                <p class="author-title">Operations Director, XYZ Logistics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="quote-icon">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25-.25 4-2.75 4v1c0 1 0 1 1 1z"></path>
+            </svg>
+            <p class="testimonial-text">
+              "As an owner-operator, downtime is money lost. NorthWestern Diesel understands this and provides fast, reliable service. Their mobile approach means I don't have to tow my rig anywhere."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4 class="author-name">Mike Rodriguez</h4>
+                <p class="author-title">Independent Trucker</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="quote-icon">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25-.25 4-2.75 4v1c0 1 0 1 1 1z"></path>
+            </svg>
+            <p class="testimonial-text">
+              "Excellent service for our farm equipment. The team came out to our location in Spokane and fixed our tractor quickly. Great communication and fair pricing."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4 class="author-name">Robert Chen</h4>
+                <p class="author-title">Farm Owner, Chen Family Farms</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to Experience Professional Service?</h2>
+      <p class="cta-subtitle">Join our satisfied customers and get reliable mobile diesel repair</p>
+      <div class="cta-buttons">
+        <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-primary">
+          Call Now {phoneNumber}
+        </a>
+        <a href="/contact/" class="btn-secondary">
+          Request Service
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(8, 112, 216, 0.1) 0%,
+      transparent 50%
+    );
+    background-color: var(--bg-dark);
+  }
+
+  .hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .page-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Testimonials Section */
+  .testimonials-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+  }
+
+  .testimonials-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .testimonial-card {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.2);
+  }
+
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .quote-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--primary-red);
+    opacity: 0.6;
+  }
+
+  .testimonial-text {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .author-info {
+    flex: 1;
+  }
+
+  .author-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 0.25rem 0;
+  }
+
+  .author-title {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      rgba(8, 112, 216, 0.1) 100%
+    );
+    background-color: var(--bg-dark);
+  }
+
+  .cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(210, 10, 15, 0.4);
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(210, 10, 15, 0.5);
+    background: linear-gradient(135deg, var(--primary-red-dark), var(--primary-red));
+  }
+
+  .btn-secondary {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(8, 112, 216, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .page-hero,
+    .testimonials-section,
+    .cta-section {
+      padding: 3rem 1rem;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+    }
+  }
+</style>
+

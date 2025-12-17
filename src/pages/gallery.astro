@@ -1,0 +1,403 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import locationsData from '../data/locations.json';
+
+const phoneNumber = locationsData.dfw.phone;
+---
+
+<BaseLayout 
+  title="Gallery | Before & After | NorthWestern Diesel"
+  description="View our gallery of before and after photos showcasing NorthWestern Diesel's mobile diesel repair work. See the quality of our service and repairs."
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="hero-container">
+      <h1 class="page-title">Gallery</h1>
+      <p class="page-subtitle">Before & After: See Our Work</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="gallery-container">
+      <div class="gallery-intro">
+        <h2 class="section-title">Our Work Speaks for Itself</h2>
+        <p class="section-description">
+          Take a look at some of our recent mobile diesel repair projects. From emergency roadside repairs to comprehensive fleet maintenance, we bring professional service directly to your location.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-card">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="placeholder-icon">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <p class="placeholder-text">Before & After Photo</p>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-title">Engine Diagnostic & Repair</h3>
+              <p class="gallery-description">Complete engine diagnostic and repair service performed on-site</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-card">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="placeholder-icon">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <p class="placeholder-text">Before & After Photo</p>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-title">Fleet Maintenance</h3>
+              <p class="gallery-description">Scheduled maintenance for commercial fleet vehicles</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-card">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="placeholder-icon">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <p class="placeholder-text">Before & After Photo</p>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-title">Emergency Roadside Service</h3>
+              <p class="gallery-description">Quick response emergency repair on the highway</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-card">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="placeholder-icon">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <p class="placeholder-text">Before & After Photo</p>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-title">Agricultural Equipment</h3>
+              <p class="gallery-description">Farm equipment repair and maintenance service</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-card">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="placeholder-icon">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <p class="placeholder-text">Before & After Photo</p>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-title">Heavy Equipment Service</h3>
+              <p class="gallery-description">On-site service for construction and heavy machinery</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-card">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="placeholder-icon">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <p class="placeholder-text">Before & After Photo</p>
+            </div>
+            <div class="gallery-info">
+              <h3 class="gallery-title">Preventive Maintenance</h3>
+              <p class="gallery-description">Regular maintenance keeps equipment running smoothly</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Need Professional Diesel Repair?</h2>
+      <p class="cta-subtitle">Let us bring our expertise to your location</p>
+      <div class="cta-buttons">
+        <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-primary">
+          Call Now {phoneNumber}
+        </a>
+        <a href="/contact/" class="btn-secondary">
+          Request Service
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(8, 112, 216, 0.1) 0%,
+      transparent 50%
+    );
+    background-color: var(--bg-dark);
+  }
+
+  .hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .page-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Gallery Section */
+  .gallery-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+  }
+
+  .gallery-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .gallery-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .gallery-item {
+    width: 100%;
+  }
+
+  .gallery-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.2);
+  }
+
+  .gallery-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1),
+      rgba(8, 112, 216, 0.1)
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .placeholder-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--primary-red);
+    opacity: 0.5;
+  }
+
+  .placeholder-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .gallery-info {
+    padding: 1.5rem;
+  }
+
+  .gallery-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .gallery-description {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      rgba(8, 112, 216, 0.1) 100%
+    );
+    background-color: var(--bg-dark);
+  }
+
+  .cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(210, 10, 15, 0.4);
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(210, 10, 15, 0.5);
+    background: linear-gradient(135deg, var(--primary-red-dark), var(--primary-red));
+  }
+
+  .btn-secondary {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(8, 112, 216, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .page-hero,
+    .gallery-section,
+    .cta-section {
+      padding: 3rem 1rem;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+    }
+  }
+</style>
+

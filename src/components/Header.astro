@@ -1,0 +1,543 @@
+---
+import locationsData from '../data/locations.json';
+
+// Get phone number - for now using global number, but structure supports location-aware
+const phoneNumber = locationsData.dfw.phone;
+---
+
+<header class="header" id="main-header">
+  <div class="header-container">
+    <!-- Logo -->
+    <a href="/" class="logo-link" aria-label="NorthWestern Diesel Home">
+      <div class="logo">
+        <span class="logo-text">NWD</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-desktop" aria-label="Main navigation">
+      <div class="nav-dropdown">
+        <a href="/service-areas/" class="nav-link">Service Areas</a>
+        <div class="dropdown-menu">
+          <a href="/service-areas/dfw/" class="dropdown-link">Dallas-Fort Worth</a>
+          <a href="/service-areas/spokane/" class="dropdown-link">Spokane</a>
+        </div>
+      </div>
+      <a href="/services/" class="nav-link">Services</a>
+      <a href="/emergency/" class="nav-link">Emergency</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- CTA Buttons -->
+    <div class="header-ctas">
+      <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-call-now">
+        Call Now
+      </a>
+      <a href="/contact/" class="btn-request-service">
+        Request Service
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav class="nav-mobile" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="/service-areas/" class="nav-link-mobile">Service Areas</a>
+    <div class="mobile-sub-links">
+      <a href="/service-areas/dfw/" class="nav-link-mobile-sub">Dallas-Fort Worth</a>
+      <a href="/service-areas/spokane/" class="nav-link-mobile-sub">Spokane</a>
+    </div>
+    <a href="/services/" class="nav-link-mobile">Services</a>
+    <a href="/emergency/" class="nav-link-mobile">Emergency</a>
+    <a href="/about/" class="nav-link-mobile">About</a>
+    <a href="/contact/" class="nav-link-mobile">Contact</a>
+    <div class="mobile-ctas">
+      <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-call-now-mobile">
+        Call Now
+      </a>
+      <a href="/contact/" class="btn-request-service-mobile">
+        Request Service
+      </a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(210, 10, 15, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  /* Logo */
+  .logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(
+      135deg,
+      var(--white) 0%,
+      var(--primary-red) 50%,
+      var(--primary-blue) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Desktop Navigation */
+  .nav-desktop {
+    display: none;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .nav-desktop {
+      display: flex;
+    }
+  }
+
+  .nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+
+  .nav-link:hover {
+    color: var(--primary-blue);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Dropdown Menu */
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 1rem;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 180px;
+    margin-top: 0.75rem;
+    background-color: rgba(10, 10, 10, 0.98);
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+  }
+
+  .nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .dropdown-link {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .dropdown-link:hover {
+    color: var(--primary-blue);
+    background-color: rgba(8, 112, 216, 0.1);
+    padding-left: 1.5rem;
+  }
+
+  /* CTA Buttons */
+  .header-ctas {
+    display: none;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .header-ctas {
+      display: flex;
+    }
+  }
+
+  .btn-call-now {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 8px rgba(210, 10, 15, 0.3);
+    white-space: nowrap;
+  }
+
+  .btn-call-now:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(210, 10, 15, 0.5);
+    background: linear-gradient(135deg, var(--primary-red-dark), var(--primary-red));
+  }
+
+  .btn-request-service {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .btn-request-service:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(8, 112, 216, 0.3);
+  }
+
+  /* Mobile Menu Toggle */
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-menu-toggle {
+      display: none;
+    }
+  }
+
+  .hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: var(--text-light);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-radius: 2px;
+    transform-origin: center;
+  }
+
+  .mobile-menu-toggle:hover .hamburger-line {
+    background: var(--primary-blue);
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+    background: var(--primary-red);
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+    background: var(--primary-red);
+  }
+
+  /* Mobile Navigation */
+  .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 2rem;
+    background-color: rgba(10, 10, 10, 0.98);
+    border-top: 1px solid rgba(210, 10, 15, 0.2);
+    gap: 0.5rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease,
+                transform 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-mobile.open {
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (min-width: 1024px) {
+    .nav-mobile {
+      display: none !important;
+    }
+  }
+
+  .nav-link-mobile {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.3s ease, padding-left 0.3s ease, transform 0.2s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition-delay: 0s;
+  }
+
+  .nav-mobile.open .nav-link-mobile {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-mobile.open .nav-link-mobile:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .nav-mobile.open .nav-link-mobile:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+
+  .nav-mobile.open .nav-link-mobile:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .nav-mobile.open .nav-link-mobile:nth-child(4) {
+    transition-delay: 0.25s;
+  }
+
+  .nav-mobile.open .nav-link-mobile:nth-child(5) {
+    transition-delay: 0.3s;
+  }
+
+  .nav-link-mobile:hover {
+    color: var(--primary-blue);
+    padding-left: 0.5rem;
+    transform: translateX(5px);
+  }
+
+  .mobile-sub-links {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .nav-mobile.open .mobile-sub-links {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.12s;
+  }
+
+  .nav-link-mobile-sub {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: color 0.3s ease, padding-left 0.3s ease;
+  }
+
+  .nav-link-mobile-sub:hover {
+    color: var(--primary-blue);
+    padding-left: 0.5rem;
+  }
+
+  .mobile-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease 0.35s, transform 0.3s ease 0.35s;
+  }
+
+  .nav-mobile.open .mobile-ctas {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .btn-call-now-mobile {
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.95);
+  }
+
+  .nav-mobile.open .btn-call-now-mobile {
+    transform: scale(1);
+  }
+
+  .btn-call-now-mobile:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(210, 10, 15, 0.5);
+  }
+
+  .btn-request-service-mobile {
+    padding: 1rem;
+    background: transparent;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.95);
+  }
+
+  .nav-mobile.open .btn-request-service-mobile {
+    transform: scale(1);
+  }
+
+  .btn-request-service-mobile:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .header-container {
+      padding: 1rem;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle functionality
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  if (mobileMenuToggle && mobileNav) {
+    mobileMenuToggle.addEventListener('click', () => {
+      const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+      mobileMenuToggle.setAttribute('aria-expanded', String(!isExpanded));
+      mobileNav.classList.toggle('open');
+      
+      // Prevent body scroll when menu is open
+      if (!isExpanded) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close mobile menu when clicking a link
+    const mobileLinks = mobileNav.querySelectorAll('.nav-link-mobile, .btn-call-now-mobile, .btn-request-service-mobile');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close mobile menu on window resize if it's open
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+</script>
+

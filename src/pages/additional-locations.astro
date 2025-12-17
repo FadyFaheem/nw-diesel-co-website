@@ -1,0 +1,504 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import locationsData from '../data/locations.json';
+
+const phoneNumber = locationsData.dfw.phone;
+---
+
+<BaseLayout 
+  title="Additional Locations | Service Areas | NorthWestern Diesel"
+  description="NorthWestern Diesel is expanding to serve additional locations. Check our current service areas and upcoming locations for mobile diesel repair services."
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="hero-container">
+      <h1 class="page-title">Additional Locations</h1>
+      <p class="page-subtitle">Expanding Our Service Coverage</p>
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <section class="locations-section">
+    <div class="locations-container">
+      <div class="locations-intro">
+        <h2 class="section-title">Our Service Areas</h2>
+        <p class="section-description">
+          NorthWestern Diesel currently provides mobile diesel repair services in the Dallas-Fort Worth metroplex and Spokane regions. We're continuously expanding our coverage to serve more communities.
+        </p>
+      </div>
+
+      <div class="current-locations">
+        <h3 class="subsection-title">Current Service Locations</h3>
+        <div class="locations-grid">
+          <div class="location-card">
+            <div class="location-header">
+              <h4 class="location-name">Dallas-Fort Worth</h4>
+              <span class="location-status">Active</span>
+            </div>
+            <div class="location-details">
+              <p class="location-description">
+                Serving the entire DFW metroplex with a 100-mile radius coverage area. We provide comprehensive mobile diesel repair services including emergency repairs, fleet maintenance, and on-site diagnostics.
+              </p>
+              <div class="location-info">
+                <div class="info-item">
+                  <strong>Coverage:</strong> 100-mile radius
+                </div>
+                <div class="info-item">
+                  <strong>Phone:</strong> <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="phone-link">{phoneNumber}</a>
+                </div>
+                <div class="info-item">
+                  <strong>Services:</strong> All services available
+                </div>
+              </div>
+              <a href="/service-areas/dfw/" class="location-link">Learn More →</a>
+            </div>
+          </div>
+
+          <div class="location-card">
+            <div class="location-header">
+              <h4 class="location-name">Spokane</h4>
+              <span class="location-status">Active</span>
+            </div>
+            <div class="location-details">
+              <p class="location-description">
+                Serving the Spokane region with a 75-mile radius coverage area. Specializing in agricultural equipment and fleet services with limited availability.
+              </p>
+              <div class="location-info">
+                <div class="info-item">
+                  <strong>Coverage:</strong> 75-mile radius
+                </div>
+                <div class="info-item">
+                  <strong>Phone:</strong> <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="phone-link">{phoneNumber}</a>
+                </div>
+                <div class="info-item">
+                  <strong>Services:</strong> Limited - call before requesting
+                </div>
+              </div>
+              <a href="/service-areas/spokane/" class="location-link">Learn More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="upcoming-locations">
+        <h3 class="subsection-title">Coming Soon</h3>
+        <div class="coming-soon-card">
+          <p class="coming-soon-text">
+            We're actively working to expand our service coverage to additional locations. If you're outside our current service areas but need mobile diesel repair services, please contact us. We may be able to accommodate your needs or add your area to our expansion plans.
+          </p>
+          <div class="coming-soon-features">
+            <div class="feature-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-icon">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>Expanding coverage areas</span>
+            </div>
+            <div class="feature-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-icon">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>New service locations</span>
+            </div>
+            <div class="feature-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-icon">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>Extended service hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="request-location">
+        <h3 class="subsection-title">Request Service in Your Area</h3>
+        <p class="request-text">
+          Don't see your location listed? Contact us to discuss your service needs. We're always looking to expand our coverage and may be able to accommodate requests for new service areas.
+        </p>
+        <div class="request-buttons">
+          <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-primary">
+            Call {phoneNumber}
+          </a>
+          <a href="/contact/" class="btn-secondary">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Need Service in Your Area?</h2>
+      <p class="cta-subtitle">Contact us to discuss your mobile diesel repair needs</p>
+      <div class="cta-buttons">
+        <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-primary">
+          Call Now {phoneNumber}
+        </a>
+        <a href="/contact/" class="btn-secondary">
+          Request Service
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(8, 112, 216, 0.1) 0%,
+      transparent 50%
+    );
+    background-color: var(--bg-dark);
+  }
+
+  .hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .page-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Locations Section */
+  .locations-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+  }
+
+  .locations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .locations-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subsection-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .current-locations {
+    margin-bottom: 3rem;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+  }
+
+  .location-card {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .location-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.2);
+  }
+
+  .location-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(210, 10, 15, 0.3);
+  }
+
+  .location-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .location-status {
+    padding: 0.4rem 0.8rem;
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .location-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .location-description {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .location-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--bg-dark);
+    border-radius: 6px;
+  }
+
+  .info-item {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .info-item strong {
+    color: var(--text-light);
+  }
+
+  .phone-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .phone-link:hover {
+    text-decoration: underline;
+  }
+
+  .location-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+
+  .location-link:hover {
+    color: var(--primary-red);
+  }
+
+  .upcoming-locations {
+    margin-bottom: 3rem;
+  }
+
+  .coming-soon-card {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(8, 112, 216, 0.2);
+  }
+
+  .coming-soon-text {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0 0 2rem 0;
+  }
+
+  .coming-soon-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-muted);
+  }
+
+  .feature-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-blue);
+    flex-shrink: 0;
+  }
+
+  .request-location {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    text-align: center;
+  }
+
+  .request-text {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0 0 2rem 0;
+  }
+
+  .request-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      rgba(8, 112, 216, 0.1) 100%
+    );
+    background-color: var(--bg-dark);
+  }
+
+  .cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(210, 10, 15, 0.4);
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(210, 10, 15, 0.5);
+    background: linear-gradient(135deg, var(--primary-red-dark), var(--primary-red));
+  }
+
+  .btn-secondary {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(8, 112, 216, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .page-hero,
+    .locations-section,
+    .cta-section {
+      padding: 3rem 1rem;
+    }
+
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .request-buttons,
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+    }
+  }
+</style>
+

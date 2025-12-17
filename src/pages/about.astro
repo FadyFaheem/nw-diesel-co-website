@@ -1,0 +1,595 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import locationsData from '../data/locations.json';
+
+const phoneNumber = locationsData.dfw.phone;
+---
+
+<BaseLayout 
+  title="About Us | NorthWestern Diesel | Licensed & Insured Mobile Diesel Repair"
+  description="Learn about NorthWestern Diesel - a licensed and insured mobile diesel repair service serving DFW and Spokane. Professional, reliable, and ready to get you back on the road."
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="hero-container">
+      <h1 class="page-title">About NorthWestern Diesel</h1>
+      <p class="page-subtitle">Professional mobile diesel repair services you can trust</p>
+    </div>
+  </section>
+
+  <!-- Credibility Section -->
+  <section class="credibility-section">
+    <div class="credibility-container">
+      <div class="credibility-content">
+        <div class="credibility-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="badge-icon">
+            <path d="M9 12l2 2 4-4"></path>
+            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+            <path d="M12 21c0-1-1-3-3-3s-3 2-3 3 1 3 3 3 3-2 3-3"></path>
+            <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"></path>
+          </svg>
+          Licensed & Insured
+        </div>
+        <h2 class="credibility-title">Your Equipment is in Qualified Hands</h2>
+        <p class="credibility-description">
+          NorthWestern Diesel is a fully licensed and insured mobile diesel repair service, 
+          established in 2025. We bring professional-grade equipment and expertise directly 
+          to your location, whether you're on the road, at your facility, or in the field.
+        </p>
+        <p class="credibility-description">
+          Our commitment to quality service, transparent pricing, and rapid response times 
+          has made us a trusted partner for fleets, owner-operators, and agricultural operations 
+          across the Dallas-Fort Worth metroplex and Spokane regions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Features -->
+  <section class="trust-features-section">
+    <div class="trust-features-container">
+      <div class="trust-features-grid">
+        <div class="trust-feature-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-icon">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <h3>Fully Licensed</h3>
+          <p>We operate with all required business licenses and certifications, ensuring compliance with local and state regulations.</p>
+        </div>
+        <div class="trust-feature-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-icon">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <h3>Comprehensive Insurance</h3>
+          <p>Fully insured with comprehensive coverage to protect your equipment and provide peace of mind with every service call.</p>
+        </div>
+        <div class="trust-feature-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-icon">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <h3>Experienced Technicians</h3>
+          <p>Our team brings years of experience in diesel engine diagnostics, repair, and maintenance across a wide range of equipment types.</p>
+        </div>
+        <div class="trust-feature-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-icon">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <h3>Rapid Response</h3>
+          <p>We understand downtime costs money. Our mobile service model means faster response times and less disruption to your operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Model -->
+  <section class="service-model-section">
+    <div class="service-model-container">
+      <div class="service-model-content">
+        <h2 class="section-title">Our Service Model</h2>
+        <p class="section-description">
+          NorthWestern Diesel operates as a mobile service provider, bringing the shop to you. 
+          This approach offers several key advantages:
+        </p>
+        <div class="service-model-list">
+          <div class="service-model-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="model-icon">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+            <div>
+              <h3>Convenience</h3>
+              <p>No need to tow your equipment to a shop. We come to you, saving time and reducing downtime.</p>
+            </div>
+          </div>
+          <div class="service-model-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="model-icon">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+            <div>
+              <h3>Transparent Pricing</h3>
+              <p>Clear hourly rates with no hidden fees. You know what you're paying before we start work.</p>
+            </div>
+          </div>
+          <div class="service-model-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="model-icon">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+            <div>
+              <h3>Flexible Scheduling</h3>
+              <p>From emergency roadside assistance to scheduled fleet maintenance, we work around your schedule.</p>
+            </div>
+          </div>
+          <div class="service-model-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="model-icon">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+            <div>
+              <h3>Wide Coverage Area</h3>
+              <p>Serving DFW metroplex (100-mile radius) and Spokane region (75-mile radius) with reliable mobile service.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Serve -->
+  <section class="who-we-serve-section">
+    <div class="who-we-serve-container">
+      <h2 class="section-title">Who We Serve</h2>
+      <p class="section-description">
+        NorthWestern Diesel provides mobile diesel repair services to a diverse range of customers:
+      </p>
+      <div class="customer-types-grid">
+        <div class="customer-type-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="customer-icon">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="9" y1="3" x2="9" y2="21"></line>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+          </svg>
+          <h3>Fleet Operators</h3>
+          <p>Scheduled maintenance and emergency repairs for commercial vehicle fleets of all sizes.</p>
+        </div>
+        <div class="customer-type-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="customer-icon">
+            <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path>
+            <polyline points="12 15 17 20 22 15"></polyline>
+            <line x1="12" y1="20" x2="12" y2="12"></line>
+          </svg>
+          <h3>Owner-Operators</h3>
+          <p>Reliable service for independent truckers who need fast, professional repairs to stay on the road.</p>
+        </div>
+        <div class="customer-type-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="customer-icon">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          <h3>Agricultural Operations</h3>
+          <p>Farm equipment repair and maintenance, with special rates available for agricultural customers in Spokane.</p>
+        </div>
+        <div class="customer-type-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="customer-icon">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+          <h3>Construction & Heavy Equipment</h3>
+          <p>On-site service for construction equipment, generators, and other heavy diesel machinery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to Experience Professional Mobile Diesel Repair?</h2>
+      <p class="cta-subtitle">Get in touch today for fast, reliable service you can trust</p>
+      <div class="cta-buttons">
+        <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-primary">
+          Call Now {phoneNumber}
+        </a>
+        <a href="/contact/" class="btn-secondary">
+          Request Service
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(8, 112, 216, 0.1) 0%,
+      transparent 50%
+    );
+    background-color: var(--bg-dark);
+  }
+
+  .hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .page-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Credibility Section */
+  .credibility-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+  }
+
+  .credibility-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .credibility-content {
+    text-align: center;
+  }
+
+  .credibility-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(210, 10, 15, 0.3);
+    border-radius: 50px;
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+  }
+
+  .badge-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .credibility-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .credibility-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0 0 1.5rem 0;
+    text-align: left;
+  }
+
+  /* Trust Features Section */
+  .trust-features-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-card);
+  }
+
+  .trust-features-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .trust-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .trust-feature-card {
+    background-color: var(--bg-dark);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .trust-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.2);
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--primary-red);
+    margin: 0 auto 1rem;
+  }
+
+  .trust-feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .trust-feature-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* Service Model Section */
+  .service-model-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+  }
+
+  .service-model-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .service-model-content {
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 2.5rem 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .service-model-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .service-model-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-blue);
+  }
+
+  .model-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-blue);
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+
+  .service-model-item h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .service-model-item p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* Who We Serve Section */
+  .who-we-serve-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-card);
+  }
+
+  .who-we-serve-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .customer-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .customer-type-card {
+    background-color: var(--bg-dark);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(8, 112, 216, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .customer-type-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(8, 112, 216, 0.2);
+  }
+
+  .customer-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--primary-blue);
+    margin: 0 auto 1rem;
+  }
+
+  .customer-type-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .customer-type-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      rgba(8, 112, 216, 0.1) 100%
+    );
+    background-color: var(--bg-dark);
+  }
+
+  .cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(210, 10, 15, 0.4);
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(210, 10, 15, 0.5);
+    background: linear-gradient(135deg, var(--primary-red-dark), var(--primary-red));
+  }
+
+  .btn-secondary {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(8, 112, 216, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .page-hero,
+    .credibility-section,
+    .trust-features-section,
+    .service-model-section,
+    .who-we-serve-section,
+    .cta-section {
+      padding: 3rem 1rem;
+    }
+
+    .service-model-item {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+    }
+
+    .trust-features-grid,
+    .customer-types-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

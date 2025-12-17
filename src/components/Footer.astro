@@ -1,0 +1,323 @@
+---
+import locationsData from '../data/locations.json';
+
+// Get phone number - for now using global number, but structure supports location-aware
+const phoneNumber = locationsData.dfw.phone;
+const email = 'donovanw@nwdieselco.com';
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Logo and Brand -->
+    <div class="footer-brand">
+      <a href="/" class="footer-logo-link" aria-label="NorthWestern Diesel Home">
+        <div class="footer-logo">
+          <span class="footer-logo-text">NWD</span>
+        </div>
+      </a>
+      <p class="footer-tagline">Licensed & Insured Mobile Diesel Repair</p>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <div class="footer-nav-section">
+        <h3 class="footer-nav-title">Services</h3>
+        <ul class="footer-nav-list">
+          <li><a href="/service-areas/" class="footer-link">Service Areas</a></li>
+          <li><a href="/services/" class="footer-link">Services</a></li>
+          <li><a href="/emergency/" class="footer-link">Emergency Repairs</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-section">
+        <h3 class="footer-nav-title">Company</h3>
+        <ul class="footer-nav-list">
+          <li><a href="/about/" class="footer-link">About</a></li>
+          <li><a href="/contact/" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h3 class="footer-contact-title">Get In Touch</h3>
+      <div class="footer-contact-info">
+        <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="footer-contact-item">
+          <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>{phoneNumber}</span>
+        </a>
+        <a href={`mailto:${email}`} class="footer-contact-item">
+          <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>{email}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-container">
+      <p class="footer-copyright">
+        &copy; {new Date().getFullYear()} NorthWestern Diesel. All rights reserved.
+      </p>
+      <nav class="footer-legal" aria-label="Legal links">
+        <a href="/privacy/" class="footer-legal-link">Privacy Policy</a>
+        <span class="footer-legal-separator">|</span>
+        <a href="/terms/" class="footer-legal-link">Terms & Disclaimers</a>
+        <span class="footer-legal-separator">|</span>
+        <a href="/sitemap/" class="footer-legal-link footer-sitemap-link">Sitemap</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid rgba(210, 10, 15, 0.2);
+    margin-top: 4rem;
+  }
+
+  .footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .footer-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-container {
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  /* Brand Section */
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-logo-link {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-logo-text {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(
+      135deg,
+      var(--white) 0%,
+      var(--primary-red) 50%,
+      var(--primary-blue) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-tagline {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Navigation Section */
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .footer-nav {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  .footer-nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-nav-title {
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  .footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+    display: inline-block;
+  }
+
+  .footer-link:hover {
+    color: var(--primary-blue);
+  }
+
+  /* Contact Section */
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-contact-title {
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  .footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-contact-item:hover {
+    color: var(--primary-blue);
+  }
+
+  .footer-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--primary-blue);
+    transition: color 0.2s ease;
+  }
+
+  .footer-contact-item:hover .footer-icon {
+    color: var(--primary-red);
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--bg-dark);
+    padding: 1.5rem 2rem;
+  }
+
+  .footer-bottom-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 640px) {
+    .footer-bottom-container {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  .footer-copyright {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-legal-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-legal-link:hover {
+    color: var(--primary-blue);
+  }
+
+  .footer-legal-separator {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .footer-sitemap-link {
+    opacity: 0.5;
+    font-size: 0.75rem;
+  }
+
+  .footer-sitemap-link:hover {
+    opacity: 1;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .footer-container {
+      padding: 2rem 1rem;
+    }
+
+    .footer-bottom {
+      padding: 1.5rem 1rem;
+    }
+
+    .footer-nav {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>
+

@@ -1,0 +1,565 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmergencyBanner from '../components/EmergencyBanner.astro';
+import PricingTable from '../components/PricingTable.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import LocationCard from '../components/LocationCard.astro';
+import locationsData from '../data/locations.json';
+
+const phoneNumber = locationsData.dfw.phone;
+const email = 'donovanw@nwdieselco.com';
+
+// LocalBusiness Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "NorthWestern Diesel",
+  "description": "Licensed & insured mobile diesel repair serving DFW and Spokane. Emergency repairs, fleet maintenance, and on-site service.",
+  "url": Astro.site?.href || "https://nwdieselco.com",
+  "telephone": phoneNumber.replace(/\D/g, ''),
+  "email": email,
+  "priceRange": "$$",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "32.7767",
+      "longitude": "-96.7970"
+    },
+    "geoRadius": {
+      "@type": "Distance",
+      "name": "100 miles"
+    }
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Dallas-Fort Worth"
+    },
+    {
+      "@type": "City",
+      "name": "Spokane"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Mobile Diesel Repair Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Diesel Repairs"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fleet Maintenance"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Diagnostics & Repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Welding & Fabrication"
+        }
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout 
+  title="Mobile Diesel Repair | NorthWestern Diesel | DFW & Spokane"
+  description="Licensed & insured mobile diesel repair serving DFW and Spokane. Emergency repairs, fleet maintenance, and on-site service. Call (682) 540-4507."
+  schema={organizationSchema}
+>
+  <!-- Emergency Banner -->
+  <EmergencyBanner />
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="badge-icon">
+            <path d="M9 12l2 2 4-4"></path>
+            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+            <path d="M12 21c0-1-1-3-3-3s-3 2-3 3 1 3 3 3 3-2 3-3"></path>
+            <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"></path>
+          </svg>
+          Licensed & Insured
+        </div>
+        <h1 class="hero-title">Mobile Diesel Repair<br>When You Need It, Where You Need It</h1>
+        <p class="hero-subtitle">NorthWestern Diesel brings the shop to you. Licensed, insured, and ready to get you back on the road across DFW and Spokane.</p>
+        <div class="hero-ctas">
+          <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-primary">
+            Call Now {phoneNumber}
+          </a>
+          <a href="/contact/" class="btn-secondary">
+            Request Service
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Highlights -->
+  <section class="services-section">
+    <div class="services-container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Comprehensive mobile diesel repair solutions for fleets, owner-operators, and agricultural equipment</p>
+      <div class="services-grid">
+        <ServiceCard
+          title="Emergency Repairs"
+          description="24/7 emergency roadside assistance when you need it most. Fast response times to get you back on the road."
+          icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>`}
+        />
+        <ServiceCard
+          title="Fleet Maintenance"
+          description="Scheduled maintenance programs to keep your fleet running smoothly. Preventative care that saves time and money."
+          icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="9" y1="3" x2="9" y2="21"></line>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+          </svg>`}
+        />
+        <ServiceCard
+          title="Diagnostics & Repair"
+          description="Advanced diagnostic equipment to quickly identify issues. Expert repairs for all diesel engine systems."
+          icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="6" x2="12" y2="14"></line>
+            <circle cx="12" cy="17" r="0.5" fill="currentColor"></circle>
+          </svg>`}
+        />
+        <ServiceCard
+          title="Welding & Fabrication"
+          description="On-site welding services for exhaust systems, frames, and custom fabrication needs."
+          icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>`}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Block -->
+  <PricingTable />
+
+  <!-- Service Areas Preview -->
+  <section class="locations-section">
+    <div class="locations-container">
+      <h2 class="section-title">Service Areas</h2>
+      <p class="section-subtitle">We bring professional diesel repair services directly to your location</p>
+      <div class="locations-grid">
+        <LocationCard
+          name="dfw"
+          displayName={locationsData.dfw.displayName}
+          radius={locationsData.dfw.radius}
+          link="/service-areas/dfw/"
+        />
+        <LocationCard
+          name="spokane"
+          displayName={locationsData.spokane.displayName}
+          radius={locationsData.spokane.radius}
+          link="/service-areas/spokane/"
+        />
+      </div>
+      <div class="locations-cta">
+        <a href="/service-areas/" class="btn-secondary">View All Service Areas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="trust-section">
+    <div class="trust-container">
+      <div class="trust-content">
+        <h2 class="trust-title">Licensed & Insured</h2>
+        <p class="trust-description">Your equipment is in qualified hands. NorthWestern Diesel is fully licensed and insured, giving you peace of mind with every service call.</p>
+        <div class="trust-features">
+          <div class="trust-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="trust-icon">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Fully Licensed</span>
+          </div>
+          <div class="trust-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="trust-icon">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Comprehensive Insurance</span>
+          </div>
+          <div class="trust-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="trust-icon">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Experienced Technicians</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to Schedule?</h2>
+      <p class="cta-subtitle">Get in touch today for fast, professional mobile diesel repair service</p>
+      <div class="cta-buttons">
+        <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-primary">
+          Call Now {phoneNumber}
+        </a>
+        <a href="/contact/" class="btn-secondary">
+          Request Service Form
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(8, 112, 216, 0.1) 0%,
+      transparent 50%
+    );
+    background-color: var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(8, 112, 216, 0.03) 2px,
+      rgba(8, 112, 216, 0.03) 4px
+    );
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(210, 10, 15, 0.3);
+    border-radius: 50px;
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+  }
+
+  .badge-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1.5rem 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-muted);
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(210, 10, 15, 0.4);
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(210, 10, 15, 0.5);
+    background: linear-gradient(135deg, var(--primary-red-dark), var(--primary-red));
+  }
+
+  .btn-secondary {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(8, 112, 216, 0.3);
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+  }
+
+  .services-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin: 0 0 3rem 0;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  /* Locations Section */
+  .locations-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-dark);
+  }
+
+  .locations-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .locations-cta {
+    text-align: center;
+  }
+
+  /* Trust Section */
+  .trust-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-card);
+  }
+
+  .trust-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .trust-content {
+    text-align: center;
+  }
+
+  .trust-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .trust-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .trust-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .trust-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .trust-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--primary-red);
+  }
+
+  .trust-feature span {
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 1rem;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(210, 10, 15, 0.1) 0%,
+      rgba(8, 112, 216, 0.1) 100%
+    );
+    background-color: var(--bg-dark);
+  }
+
+  .cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0 0 2.5rem 0;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .hero {
+      padding: 3rem 1rem;
+    }
+
+    .services-section,
+    .locations-section,
+    .trust-section,
+    .cta-section {
+      padding: 3rem 1rem;
+    }
+
+    .hero-ctas,
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+    }
+
+    .services-grid,
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
