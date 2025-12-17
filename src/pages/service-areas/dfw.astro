@@ -150,6 +150,17 @@ const dfwSchema = {
             <p>Diagnosis and repair of electrical issues and wiring problems</p>
           </div>
         </div>
+        <div class="service-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="service-icon">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+          </svg>
+          <div>
+            <h3>Tire Services</h3>
+            <p>Mobile tire services including tire replacement, repair, and balancing for commercial vehicles and heavy equipment</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -348,9 +359,16 @@ const dfwSchema = {
   }
 
   .services-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
+    justify-content: center;
+  }
+
+  .services-list > * {
+    flex: 0 1 300px;
+    max-width: 400px;
+    min-width: 300px;
   }
 
   .service-item {
@@ -498,7 +516,11 @@ const dfwSchema = {
       width: 100%;
     }
 
-    .services-list,
+    .services-list > * {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
     .customers-grid {
       grid-template-columns: 1fr;
     }

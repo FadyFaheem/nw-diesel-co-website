@@ -14,7 +14,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "NorthWestern Diesel",
-  "description": "Licensed & insured mobile diesel repair serving DFW and Spokane. Emergency repairs, fleet maintenance, and on-site service.",
+  "description": "Licensed & insured mobile diesel repair serving DFW and Spokane, WA. Emergency repairs, fleet maintenance, and on-site service.",
   "url": Astro.site?.href || "https://nwdieselco.com",
   "telephone": phoneNumber.replace(/\D/g, ''),
   "email": email,
@@ -38,7 +38,7 @@ const organizationSchema = {
     },
     {
       "@type": "City",
-      "name": "Spokane"
+      "name": "Spokane, WA"
     }
   ],
   "hasOfferCatalog": {
@@ -79,8 +79,8 @@ const organizationSchema = {
 ---
 
 <BaseLayout 
-  title="Mobile Diesel Repair | NorthWestern Diesel | DFW & Spokane"
-  description="Licensed & insured mobile diesel repair serving DFW and Spokane. Emergency repairs, fleet maintenance, and on-site service. Call (682) 540-4507."
+  title="Mobile Diesel Repair | NorthWestern Diesel | DFW & Spokane, WA"
+  description="Licensed & insured mobile diesel repair serving DFW and Spokane, WA. Emergency repairs, fleet maintenance, and on-site service. Call (682) 540-4507."
   schema={organizationSchema}
 >
   <!-- Emergency Banner -->
@@ -101,7 +101,7 @@ const organizationSchema = {
           Licensed & Insured
         </div>
         <h1 class="hero-title">Mobile Diesel Repair<br>When You Need It, Where You Need It</h1>
-        <p class="hero-subtitle">NorthWestern Diesel brings the shop to you. Licensed, insured, and ready to get you back on the road across DFW and Spokane.</p>
+        <p class="hero-subtitle">NorthWestern Diesel brings the shop to you. Licensed, insured, and ready to get you back on the road across DFW and Spokane, WA.</p>
         <div class="hero-ctas">
           <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-primary">
             Call Now {phoneNumber}
@@ -414,6 +414,8 @@ const organizationSchema = {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   /* Locations Section */
@@ -429,7 +431,7 @@ const organizationSchema = {
 
   .locations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-bottom: 2rem;
   }
@@ -557,9 +559,14 @@ const organizationSchema = {
       width: 100%;
     }
 
-    .services-grid,
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
     .locations-grid {
       grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
   }
 </style>

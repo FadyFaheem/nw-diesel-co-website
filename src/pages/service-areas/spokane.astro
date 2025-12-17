@@ -11,8 +11,8 @@ const email = 'donovanw@nwdieselco.com';
 const spokaneSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "NorthWestern Diesel - Spokane",
-  "description": "Mobile diesel repair in Spokane and 75-mile radius. Farm equipment discounts available. Licensed & insured.",
+  "name": "NorthWestern Diesel - Spokane, WA",
+  "description": "Mobile diesel repair in Spokane, WA and 75-mile radius. Farm equipment discounts available. Licensed & insured.",
   "url": Astro.site?.href ? `${Astro.site.href}service-areas/spokane/` : "https://nwdieselco.com/service-areas/spokane/",
   "telephone": phoneNumber.replace(/\D/g, ''),
   "email": email,
@@ -31,14 +31,14 @@ const spokaneSchema = {
   },
   "areaServed": {
     "@type": "City",
-    "name": "Spokane"
+    "name": "Spokane, WA"
   }
 };
 ---
 
 <BaseLayout 
-  title="Mobile Diesel Repair Spokane | Farm & Fleet Service | NorthWestern Diesel"
-  description="Mobile diesel repair in Spokane and 75-mile radius. Farm equipment discounts available. Licensed & insured. Call before service - limited availability."
+  title="Mobile Diesel Repair Spokane, WA | Farm & Fleet Service | NorthWestern Diesel"
+  description="Mobile diesel repair in Spokane, WA and 75-mile radius. Farm equipment discounts available. Licensed & insured. Call before service - limited availability."
   schema={spokaneSchema}
 >
   <!-- Location Hero -->
@@ -62,12 +62,15 @@ const spokaneSchema = {
     <div class="banner-container">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="banner-icon">
         <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-        <line x1="12" y1="9" x2="12" y2="13"></line>
-        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        <line x1="12" y1="7" x2="12" y2="14"></line>
+        <circle cx="12" cy="17" r="0.5" fill="currentColor"></circle>
       </svg>
       <div class="banner-content">
-        <h2 class="banner-title">Spokane Service Notice</h2>
-        <p class="banner-text">{location.limitations}</p>
+        <h2 class="banner-title">Spokane, WA Service Notice</h2>
+        <p class="banner-text">
+          Service availability varies by location - Spokane services and hours currently limited. 
+          Please call before requesting service to confirm availability for your specific needs.
+        </p>
         <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="banner-phone">
           📞 {phoneNumber}
         </a>
@@ -80,7 +83,7 @@ const spokaneSchema = {
     <div class="map-container">
       <h2 class="section-title">Service Area Coverage</h2>
       <p class="map-description">
-        We provide mobile diesel repair services throughout the Spokane region 
+        We provide mobile diesel repair services throughout the Spokane, WA region 
         and surrounding areas within a {location.radius}. Our mobile service brings 
         the shop directly to your location, whether you're at a farm, job site, or roadside.
       </p>
@@ -97,7 +100,7 @@ const spokaneSchema = {
         ></iframe>
       </div>
       <p class="map-note">
-        Service radius extends approximately 75 miles from Spokane. 
+        Service radius extends approximately 75 miles from Spokane, WA. 
         Travel fees may apply for locations outside the standard service area.
       </p>
     </div>
@@ -108,6 +111,9 @@ const spokaneSchema = {
     <div class="services-container">
       <h2 class="section-title">Available Services</h2>
       <p class="section-subtitle">Mobile diesel repair services - please call to confirm availability for your specific needs</p>
+      <div class="service-limitations-note">
+        <p><strong>Note:</strong> Emergency repairs are limited to what can be done on-site. Limited electrical expertise in Spokane (lighting systems only). No engine diagnostics or hydraulic systems available in Spokane.</p>
+      </div>
       <div class="services-list">
         <div class="service-item">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="service-icon">
@@ -115,7 +121,7 @@ const spokaneSchema = {
           </svg>
           <div>
             <h3>Emergency Repairs</h3>
-            <p>24/7 roadside assistance for breakdowns and urgent repairs</p>
+            <p>Emergency roadside assistance for breakdowns and urgent repairs. Limited to what can be done on-site in Spokane.</p>
           </div>
         </div>
         <div class="service-item">
@@ -131,17 +137,6 @@ const spokaneSchema = {
         </div>
         <div class="service-item">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="service-icon">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="6" x2="12" y2="14"></line>
-            <circle cx="12" cy="17" r="0.5" fill="currentColor"></circle>
-          </svg>
-          <div>
-            <h3>Engine Diagnostics</h3>
-            <p>Advanced diagnostic equipment to quickly identify and resolve issues</p>
-          </div>
-        </div>
-        <div class="service-item">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="service-icon">
             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
           </svg>
           <div>
@@ -151,29 +146,50 @@ const spokaneSchema = {
         </div>
         <div class="service-item">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="service-icon">
-            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-          </svg>
-          <div>
-            <h3>Hydraulic Systems</h3>
-            <p>Repair and maintenance of hydraulic systems and components</p>
-          </div>
-        </div>
-        <div class="service-item">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="service-icon">
             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
           </svg>
           <div>
             <h3>Electrical Systems</h3>
-            <p>Diagnosis and repair of electrical issues and wiring problems</p>
+            <p>Limited electrical expertise - lighting systems only. Spokane does not have the equipment or expertise to diagnose electrical systems any further than lighting systems.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="service-icon">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+          </svg>
+          <div>
+            <h3>Tire Services</h3>
+            <p>Mobile tire services including tire replacement, repair, and balancing for commercial vehicles and heavy equipment</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Hours Section -->
+  <section class="hours-section">
+    <div class="hours-container">
+      <h2 class="section-title">Service Hours</h2>
+      <div class="hours-grid">
+        <div class="hours-card">
+          <h3 class="hours-title">Weekdays</h3>
+          <p class="hours-time">Monday - Friday</p>
+          <p class="hours-range">5:00 PM - 12:00 AM</p>
+          <p class="hours-note">No availability between 12:00 AM - 5:00 PM unless otherwise specified</p>
+        </div>
+        <div class="hours-card">
+          <h3 class="hours-title">Weekends</h3>
+          <p class="hours-time">Saturday - Sunday</p>
+          <p class="hours-range">7:00 AM - 12:00 AM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
-  <PricingTable />
+  <PricingTable location="spokane" />
 
   <!-- Farm Discount Note -->
   <section class="farm-discount-section">
@@ -449,9 +465,16 @@ const spokaneSchema = {
   }
 
   .services-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
+    justify-content: center;
+  }
+
+  .services-list > * {
+    flex: 0 1 300px;
+    max-width: 400px;
+    min-width: 300px;
   }
 
   .service-item {
@@ -492,6 +515,89 @@ const spokaneSchema = {
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.6;
+  }
+
+  .service-limitations-note {
+    background-color: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .service-limitations-note p {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .service-limitations-note strong {
+    color: #f59e0b;
+  }
+
+  .hours-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-card);
+  }
+
+  .hours-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .hours-card {
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(210, 10, 15, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .hours-card:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(210, 10, 15, 0.3);
+  }
+
+  .hours-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .hours-time {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .hours-range {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    margin: 0 0 1rem 0;
+  }
+
+  .hours-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 1rem 0 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .farm-discount-section {
@@ -668,7 +774,11 @@ const spokaneSchema = {
       width: 100%;
     }
 
-    .services-list,
+    .services-list > * {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
     .customers-grid {
       grid-template-columns: 1fr;
     }

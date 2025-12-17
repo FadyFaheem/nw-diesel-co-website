@@ -11,9 +11,7 @@ const email = 'donovanw@nwdieselco.com';
     <!-- Logo and Brand -->
     <div class="footer-brand">
       <a href="/" class="footer-logo-link" aria-label="NorthWestern Diesel Home">
-        <div class="footer-logo">
-          <span class="footer-logo-text">NWD</span>
-        </div>
+        <img src="/complogo-crop.png" alt="NorthWestern Diesel" class="footer-logo-image" />
       </a>
       <p class="footer-tagline">Licensed & Insured Mobile Diesel Repair</p>
     </div>
@@ -115,27 +113,17 @@ const email = 'donovanw@nwdieselco.com';
   .footer-logo-link {
     text-decoration: none;
     display: inline-block;
+    transition: opacity 0.3s ease;
   }
 
-  .footer-logo {
-    display: flex;
-    align-items: center;
+  .footer-logo-link:hover {
+    opacity: 0.8;
   }
 
-  .footer-logo-text {
-    font-size: 1.75rem;
-    font-weight: 700;
-    background: linear-gradient(
-      135deg,
-      var(--white) 0%,
-      var(--primary-red) 50%,
-      var(--primary-blue) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .footer-logo-image {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
   }
 
   .footer-tagline {

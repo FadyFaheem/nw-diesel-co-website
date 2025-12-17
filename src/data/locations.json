@@ -8,11 +8,16 @@
     "limitations": null
   },
   "spokane": {
-    "name": "Spokane",
-    "displayName": "Spokane",
+    "name": "Spokane, WA",
+    "displayName": "Spokane, WA",
     "phone": "(682) 540-4507",
     "radius": "75-mile radius",
     "servicesAvailable": "limited",
-    "limitations": "Services currently limited - call before requesting service"
+    "limitations": "Service availability varies by location - Spokane services and hours currently limited. Emergency repairs limited to what can be done on-site. Limited electrical expertise (lighting systems only). No engine diagnostics or hydraulic systems available.",
+    "hours": {
+      "weekdays": "Mon-Fri 5pm-12am",
+      "weekends": "Sat-Sun 7am-12am",
+      "note": "No availability between 12am-5pm on weekdays unless otherwise specified"
+    }
   }
 }
