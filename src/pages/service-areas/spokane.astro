@@ -3,9 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PricingTable from '../../components/PricingTable.astro';
 import locationsData from '../../data/locations.json';
 
+// HIDDEN: Spokane page temporarily hidden - redirecting to service areas
+return Astro.redirect('/service-areas/');
+
 const location = locationsData.spokane;
 const phoneNumber = location.phone;
-const email = 'donovanw@nwdieselco.com';
+const email = 'info@nwdieselco.com';
 
 // LocalBusiness Schema for Spokane location
 const spokaneSchema = {

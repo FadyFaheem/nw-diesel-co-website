@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import locationsData from '../data/locations.json';
 
 const phoneNumber = locationsData.dfw.phone;
-const email = 'donovanw@nwdieselco.com';
+const email = 'info@nwdieselco.com';
 ---
 
 <BaseLayout 
@@ -121,7 +121,7 @@ const email = 'donovanw@nwdieselco.com';
           >
             <option value="">Select a location</option>
             <option value="dfw">{locationsData.dfw.displayName}</option>
-            <option value="spokane">{locationsData.spokane.displayName}</option>
+            {/* <option value="spokane">{locationsData.spokane.displayName}</option> */}
           </select>
           <span class="error-message" id="location-error"></span>
         </div>

@@ -5,8 +5,8 @@ import locationsData from '../../data/locations.json';
 ---
 
 <BaseLayout 
-  title="Service Areas | NorthWestern Diesel | DFW & Spokane, WA"
-  description="Mobile diesel repair service areas covering Dallas-Fort Worth and Spokane, WA regions. Licensed & insured on-site service."
+  title="Service Areas | NorthWestern Diesel | DFW"
+  description="Mobile diesel repair service areas covering Dallas-Fort Worth region. Licensed & insured on-site service."
 >
   <section class="page-hero">
     <div class="hero-container">
@@ -24,12 +24,12 @@ import locationsData from '../../data/locations.json';
           radius={locationsData.dfw.radius}
           link="/service-areas/dfw/"
         />
-        <LocationCard
+        {/* <LocationCard
           name="spokane"
           displayName={locationsData.spokane.displayName}
           radius={locationsData.spokane.radius}
           link="/service-areas/spokane/"
-        />
+        /> */}
       </div>
     </div>
   </section>
@@ -48,11 +48,11 @@ import locationsData from '../../data/locations.json';
           <p>100-mile radius from Dallas-Fort Worth</p>
           <p class="info-note">Full service availability</p>
         </div>
-        <div class="info-card">
+        {/* <div class="info-card">
           <h3>Spokane, WA Region</h3>
           <p>75-mile radius from Spokane, WA</p>
           <p class="info-note">Limited services - call to confirm availability</p>
-        </div>
+        </div> */}
       </div>
     </div>
   </section>

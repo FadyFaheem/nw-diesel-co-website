@@ -8,7 +8,7 @@ const phoneNumber = locationsData.dfw.phone;
 
 <BaseLayout 
   title="Mobile Diesel Services | NorthWestern Diesel"
-  description="Comprehensive mobile diesel repair services including emergency repairs, fleet maintenance, diagnostics, welding, and more. Serving DFW and Spokane, WA."
+  description="Comprehensive mobile diesel repair services including emergency repairs, fleet maintenance, diagnostics, welding, and more. Serving DFW."
 >
   <!-- Page Hero -->
   <section class="page-hero">
@@ -86,7 +86,7 @@ const phoneNumber = locationsData.dfw.phone;
         />
         <ServiceCard
           title="Tire Services"
-          description="Mobile tire services including tire replacement, repair, and balancing for commercial vehicles and heavy equipment. Available in DFW and Spokane."
+          description="Mobile tire services including tire replacement, repair, and balancing for commercial vehicles and heavy equipment. Available in DFW."
           icon={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"></circle>
             <circle cx="12" cy="12" r="6"></circle>
@@ -102,7 +102,7 @@ const phoneNumber = locationsData.dfw.phone;
     <div class="note-container">
       <h2 class="note-title">Service Availability by Location</h2>
       <p class="note-text">
-        Service availability varies by location. Spokane services and hours are currently limited. 
+        Service availability varies by location. 
         Please call before requesting service to confirm availability for your specific needs.
       </p>
       
@@ -112,7 +112,7 @@ const phoneNumber = locationsData.dfw.phone;
             <tr>
               <th class="service-name-col">Service</th>
               <th class="location-col">DFW</th>
-              <th class="location-col">Spokane</th>
+              {/* <th class="location-col">Spokane</th> */}
             </tr>
           </thead>
           <tbody>
@@ -122,10 +122,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
               </td>
-              <td class="availability-cell limited">
+              {/* <td class="availability-cell limited">
                 <span class="limited-mark">⚠</span>
                 <span class="availability-text">Limited</span>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td class="service-name">Fleet Maintenance</td>
@@ -133,10 +133,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
               </td>
-              <td class="availability-cell available">
+              {/* <td class="availability-cell available">
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td class="service-name">Unscheduled & Scheduled Management</td>
@@ -144,10 +144,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
               </td>
-              <td class="availability-cell available">
+              {/* <td class="availability-cell available">
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td class="service-name">Diagnostic Services</td>
@@ -155,10 +155,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
               </td>
-              <td class="availability-cell unavailable">
+              {/* <td class="availability-cell unavailable">
                 <span class="x-mark">✗</span>
                 <span class="availability-text">Not Available</span>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td class="service-name">Engine Diagnostics</td>
@@ -166,10 +166,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
               </td>
-              <td class="availability-cell unavailable">
+              {/* <td class="availability-cell unavailable">
                 <span class="x-mark">✗</span>
                 <span class="availability-text">Not Available</span>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td class="service-name">Welding & Fabrication</td>
@@ -177,10 +177,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
               </td>
-              <td class="availability-cell available">
+              {/* <td class="availability-cell available">
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td class="service-name">Hydraulic Systems</td>
@@ -188,10 +188,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
               </td>
-              <td class="availability-cell unavailable">
+              {/* <td class="availability-cell unavailable">
                 <span class="x-mark">✗</span>
                 <span class="availability-text">Not Available</span>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td class="service-name">Electrical Systems</td>
@@ -199,10 +199,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Full Service</span>
               </td>
-              <td class="availability-cell limited">
+              {/* <td class="availability-cell limited">
                 <span class="limited-mark">⚠</span>
                 <span class="availability-text">Lighting Only</span>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td class="service-name">Preventative Maintenance</td>
@@ -210,10 +210,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
               </td>
-              <td class="availability-cell available">
+              {/* <td class="availability-cell available">
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td class="service-name">Turbo & Exhaust</td>
@@ -221,10 +221,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
               </td>
-              <td class="availability-cell available">
+              {/* <td class="availability-cell available">
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td class="service-name">Tire Services</td>
@@ -232,10 +232,10 @@ const phoneNumber = locationsData.dfw.phone;
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
               </td>
-              <td class="availability-cell available">
+              {/* <td class="availability-cell available">
                 <span class="checkmark">✓</span>
                 <span class="availability-text">Available</span>
-              </td>
+              </td> */}
             </tr>
           </tbody>
         </table>

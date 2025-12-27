@@ -6,7 +6,7 @@ const staticPages = [
   "",
   "service-areas/",
   "service-areas/dfw/",
-  "service-areas/spokane/",
+  // "service-areas/spokane/",
   "services/",
   "emergency/",
   "about/",

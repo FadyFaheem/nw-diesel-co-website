@@ -7,14 +7,14 @@ import LocationCard from '../components/LocationCard.astro';
 import locationsData from '../data/locations.json';
 
 const phoneNumber = locationsData.dfw.phone;
-const email = 'donovanw@nwdieselco.com';
+const email = 'info@nwdieselco.com';
 
 // LocalBusiness Schema
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "NorthWestern Diesel",
-  "description": "Licensed & insured mobile diesel repair serving DFW and Spokane, WA. Emergency repairs, fleet maintenance, and on-site service.",
+  "description": "Licensed & insured mobile diesel repair serving DFW. Emergency repairs, fleet maintenance, and on-site service.",
   "url": Astro.site?.href || "https://nwdieselco.com",
   "telephone": phoneNumber.replace(/\D/g, ''),
   "email": email,
@@ -36,10 +36,10 @@ const organizationSchema = {
       "@type": "City",
       "name": "Dallas-Fort Worth"
     },
-    {
-      "@type": "City",
-      "name": "Spokane, WA"
-    }
+    // {
+    //   "@type": "City",
+    //   "name": "Spokane, WA"
+    // }
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -79,8 +79,8 @@ const organizationSchema = {
 ---
 
 <BaseLayout 
-  title="Mobile Diesel Repair | NorthWestern Diesel | DFW & Spokane, WA"
-  description="Licensed & insured mobile diesel repair serving DFW and Spokane, WA. Emergency repairs, fleet maintenance, and on-site service. Call (682) 540-4507."
+  title="Mobile Diesel Repair | NorthWestern Diesel | DFW"
+  description="Licensed & insured mobile diesel repair serving DFW. Emergency repairs, fleet maintenance, and on-site service. Call (682) 540-4507."
   schema={organizationSchema}
 >
   <!-- Emergency Banner -->
@@ -101,7 +101,7 @@ const organizationSchema = {
           Licensed & Insured
         </div>
         <h1 class="hero-title">Mobile Diesel Repair<br>When You Need It, Where You Need It</h1>
-        <p class="hero-subtitle">NorthWestern Diesel brings the shop to you. Licensed, insured, and ready to get you back on the road across DFW and Spokane, WA.</p>
+        <p class="hero-subtitle">NorthWestern Diesel brings the shop to you. Licensed, insured, and ready to get you back on the road across DFW.</p>
         <div class="hero-ctas">
           <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} class="btn-primary">
             Call Now {phoneNumber}
@@ -173,12 +173,12 @@ const organizationSchema = {
           radius={locationsData.dfw.radius}
           link="/service-areas/dfw/"
         />
-        <LocationCard
+        {/* <LocationCard
           name="spokane"
           displayName={locationsData.spokane.displayName}
           radius={locationsData.spokane.radius}
           link="/service-areas/spokane/"
-        />
+        /> */}
       </div>
       <div class="locations-cta">
         <a href="/service-areas/" class="btn-secondary">View All Service Areas</a>
@@ -432,9 +432,13 @@ const organizationSchema = {
 
   .locations-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    justify-items: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .locations-cta {
